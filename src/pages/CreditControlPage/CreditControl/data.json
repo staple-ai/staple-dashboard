@@ -1,0 +1,44 @@
+{
+  "tableData": [
+    {
+      "key": "1",
+      "invoice": "INV-009",
+      "amount": "$1040",
+      "customer": "Acme Retailers",
+      "expected": "2018/06/13",
+      "status": "Overdue"
+    },
+    {
+      "key": "1",
+      "invoice": "INV-020",
+      "amount": "$10210",
+      "customer": "XYZ Retailers",
+      "expected": "2018/08/13",
+      "status": "Overdue"
+    },
+    {
+      "key": "1",
+      "invoice": "INV-090",
+      "amount": "$240",
+      "customer": "ABC Corporation",
+      "expected": "2018/07/10",
+      "status": "Processing"
+    },
+    {
+      "key": "1",
+      "invoice": "INV-090",
+      "amount": "$240",
+      "customer": "ABC Corporation",
+      "expected": "2018/07/10",
+      "status": "Processing"
+    },
+    {
+      "key": "1",
+      "invoice": "INV-020",
+      "amount": "$10210",
+      "customer": "XYZ Retailers",
+      "expected": "2018/08/13",
+      "status": "Overdue"
+    }
+  ]
+}

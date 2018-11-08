@@ -41,6 +41,10 @@ const loadableRoutes = {
   },
 
   // Dashboards
+  '/layout/credit-control': {
+    component: loadable(() => import('pages/CreditControlPage')),
+  },
+
   '/dashboard/alpha': {
     component: loadable(() => import('pages/Dashboard/DashboardAlphaPage')),
   },
