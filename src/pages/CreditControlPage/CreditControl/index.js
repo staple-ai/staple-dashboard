@@ -24,7 +24,7 @@ class CreditControl extends React.Component {
         columns: [
           ['Paid', 20, 200, 300, 150, 50, 250, 30, 200, 0, 0, 0, 0],
           ['Invoiced', 130, 100, 400, 100, 50, 50, 30, 100, 40, 10, 15, 50],
-          ['Forecast', 0, 0, 0, 0, 250, 250, 230, 200, 200, 300, 250, 250],
+          ['Predicted', 0, 0, 0, 0, 250, 250, 230, 200, 200, 300, 250, 250],
         ],
         type: 'bar',
         groups: [['Paid', 'Invoiced', 'Forecast']],
@@ -37,6 +37,14 @@ class CreditControl extends React.Component {
           max: 45,
         },
       },
+      axis: {
+        x: {
+          type: 'timeseries',
+          tick: {
+            format: "%b-%d",
+          },
+        },
+      },
       grid: {
         y: {
           show: !0,
@@ -45,6 +53,33 @@ class CreditControl extends React.Component {
               value: 0,
             },
           ],
+        },
+      },
+    }
+
+    let bar = {
+      data: {
+        columns: [
+          ['Danger', 30, 200, 100, 400, 150, 250],
+          ['Default', 130, 100, 140, 200, 150, 50],
+          ['Primary', 130, -150, 200, 300, -200, 100],
+        ],
+        type: 'bar',
+      },
+      bar: {
+        width: {
+          max: 20,
+        },
+      },
+      color: {
+        pattern: [colors._danger, colors._default, colors._primary],
+      },
+      grid: {
+        y: {
+          show: !0,
+        },
+        x: {
+          show: !1,
         },
       },
     }
@@ -267,6 +302,35 @@ class CreditControl extends React.Component {
         </div>
 
         <div className="row">
+          <div className="col-lg-6">
+            <div className="utils__title utils__title--flat mb-3">
+              <span className="text-uppercase font-size-16">Cash Collection Profile</span>
+            </div>
+            <div className="utils__titleDescription">
+              Forecasted invoice collection based on historical invoicing and predicted invoicing
+            </div>
+            <div className="mb-5">
+              <C3Chart
+                data={stackedBar.data}
+                color={stackedBar.color}
+                bar={stackedBar.bar}
+                grid={stackedBar.grid}
+              />
+            </div>
+          </div>
+
+          <div className="col-lg-6">
+            <div className="utils__title">Outstanding Invoices</div>
+              <div className="utils__titleDescription">
+                Historical profile of aged debtors
+              </div>
+            <div className="mb-5">
+              <C3Chart data={bar.data} color={bar.color} grid={bar.grid} bar={bar.bar} />
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
           <div className="col-lg-12">
             <div className="card">
               <div className="card-header">
@@ -282,30 +346,6 @@ class CreditControl extends React.Component {
                   pagination={false}
                 />
               </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="utils__title utils__title--flat mb-3">
-              <span className="text-uppercase font-size-16">Cash Collection Profile</span>
-            </div>
-            <p className="text-muted">
-              Element: read{' '}
-              <a href="http://c3js.org/" target="_blank" rel="noopener noreferrer">
-                official documentation<small>
-                  <i className="icmn-link ml-1" />
-                </small>
-              </a>
-            </p>
-            <div className="mb-5">
-              <C3Chart
-                data={stackedBar.data}
-                color={stackedBar.color}
-                bar={stackedBar.bar}
-                grid={stackedBar.grid}
-              />
             </div>
           </div>
         </div>
