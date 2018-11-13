@@ -16,15 +16,16 @@ class CreditControl extends React.Component {
       _primary: '#01a8fe',
       _default: '#acb7bf',
       _success: '#46be8a',
+      _warning: '#F0AC4E',
       _danger: '#fb434a',
     }
 
     let stackedBar = {
       data: {
         columns: [
-          ['Paid', 20, 200, 300, 150, 50, 250, 30, 200, 0, 0, 0, 0],
+          ['Paid', 20, 200, 300, 150, 50, 150, 30, 200, 0, 0, 0, 0],
           ['Invoiced', 130, 100, 400, 100, 50, 50, 30, 100, 40, 10, 15, 50],
-          ['Predicted', 0, 0, 0, 0, 250, 250, 230, 200, 200, 300, 250, 250],
+          ['Predicted', 0, 0, 0, 0, 250, 250, 230, 200, 20, 100, 250, 250],
         ],
         type: 'bar',
         groups: [['Paid', 'Invoiced', 'Forecast']],
@@ -34,15 +35,7 @@ class CreditControl extends React.Component {
       },
       bar: {
         width: {
-          max: 45,
-        },
-      },
-      axis: {
-        x: {
-          type: 'timeseries',
-          tick: {
-            format: "%b-%d",
-          },
+          max: 50,
         },
       },
       grid: {
@@ -60,19 +53,21 @@ class CreditControl extends React.Component {
     let bar = {
       data: {
         columns: [
-          ['Danger', 30, 200, 100, 400, 150, 250],
-          ['Default', 130, 100, 140, 200, 150, 50],
-          ['Primary', 130, -150, 200, 300, -200, 100],
+          ['Not yet due', 5300],
+          ['0-30 days late', 3208],
+          ['31-60 days late', 1233],
+          ['61-90 days late', 549],
+          ['90+ days late', 15]
         ],
         type: 'bar',
       },
       bar: {
         width: {
-          max: 20,
+          max: 50,
         },
       },
       color: {
-        pattern: [colors._danger, colors._default, colors._primary],
+        pattern: [colors._success, colors._primary, colors._default, colors._warning, colors._danger],
       },
       grid: {
         y: {
@@ -303,9 +298,7 @@ class CreditControl extends React.Component {
 
         <div className="row">
           <div className="col-lg-6">
-            <div className="utils__title utils__title--flat mb-3">
-              <span className="text-uppercase font-size-16">Cash Collection Profile</span>
-            </div>
+            <div className="utils__title">Cash Collection Profile</div>
             <div className="utils__titleDescription">
               Forecasted invoice collection based on historical invoicing and predicted invoicing
             </div>
@@ -320,7 +313,7 @@ class CreditControl extends React.Component {
           </div>
 
           <div className="col-lg-6">
-            <div className="utils__title">Outstanding Invoices</div>
+            <div className="utils__title">Aged Debtor Profile</div>
               <div className="utils__titleDescription">
                 Historical profile of aged debtors
               </div>

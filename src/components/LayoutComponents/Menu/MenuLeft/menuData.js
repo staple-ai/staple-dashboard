@@ -25,6 +25,23 @@ export default [
     key: 'roboticProcesses',
     url: '/layout/robotic-processes',
     icon: 'icmn icmn-magic-wand',
+    children: [
+      {
+        title: 'Bank Reconciliations',
+        key: 'bankReconciliations',
+        url: '/layout/robotic-processes/bank',
+      },
+      {
+        title: 'Sales and Receipts',
+        key: 'salesAndReceipts',
+        url: '/layout/robotic-processes/sales',
+      },
+      {
+        title: 'Purchases and Payments',
+        key: 'purchasesAndReceipts',
+        url: '/layout/robotic-processes/purchases',
+      },   
+    ],
   },
   {
     title: 'Sales Summary',

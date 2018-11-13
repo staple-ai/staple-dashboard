@@ -217,7 +217,6 @@
         <option value="$PROJECT_DIR$/src/components/CleanComponents/SliderCard/index.js" />
         <option value="$PROJECT_DIR$/src/components/CleanComponents/UserCard/index.js" />
         <option value="$PROJECT_DIR$/src/components/LayoutComponents/Footer/index.js" />
-        <option value="$PROJECT_DIR$/src/components/LayoutComponents/TopBar/BitcoinPrice/index.js" />
         <option value="$PROJECT_DIR$/src/components/LayoutComponents/TopBar/LiveSearch/index.js" />
         <option value="$PROJECT_DIR$/src/components/LayoutComponents/TopBar/index.js" />
         <option value="$PROJECT_DIR$/src/pages/Apps/Blog/BlogAddPostPage/BlogAddPost/index.js" />

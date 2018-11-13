@@ -4,21 +4,7 @@ import { Menu, Dropdown, Icon } from 'antd'
 const dropdownMenu = (
   <Menu>
     <Menu.Item>
-      <a href="javascript:void(0)">Project Management</a>
-    </Menu.Item>
-    <Menu.Item>
-      <a href="javascript:void(0)">User Inetrface Development</a>
-    </Menu.Item>
-    <Menu.Item>
-      <a href="javascript:void(0)">Documentation</a>
-    </Menu.Item>
-    <Menu.Item>
-      <a href="javascript:void(0)">Marketing</a>
-    </Menu.Item>
-    <Menu.Item>
-      <a href="javascript:void(0)">
-        <i className="dropdown-icon icmn-cog" /> Settings
-      </a>
+      <a href="javascript:void(0)"></a>
     </Menu.Item>
   </Menu>
 )
