@@ -72,7 +72,7 @@
     "d3-scale": "^1.0.7",
     "d3-time-format": "^2.1.1",
     "moment": "^2.19.3",
-    "moment-timezone": "^0.5.14"
+    "moment-timezone": "^0.5.35"
   },
   "scripts": {
     "start": "react-app-rewired start",
