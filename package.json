@@ -24,7 +24,7 @@
     "@rowno/sparkline": "^3.0.1",
     "ajv": "^6.5.0",
     "antd": "^3.5.3",
-    "axios": "^0.18.0",
+    "axios": "^0.21.2",
     "bootstrap": "^4.1.1",
     "chart.js": "^2.7.2",
     "chartist": "^0.10.1",
